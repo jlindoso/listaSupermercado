@@ -13,20 +13,21 @@ namespace BusinessLayer.DAL
 {
     public class UsuarioDAO : BaseDAO, IUsuarioDAO
     {
-        public Usuario Adicionar(Usuario usuario)
+        public Usuario? Adicionar(Usuario usuario)
         {
+            int id;
             using (var con = this.Con)
             {
                 con.Open();
                 try
                 {
-                    this.SqlString = "INSERT INTO Usuario(Nome, Senha, Email) values (@nome, @senha, @email)";
+                    this.SqlString = "INSERT INTO Usuario(Nome, Senha, Email)  values (@nome, @senha, @email) SELECT SCOPE_IDENTITY()";
                     using (var cmd = new SqlCommand(this.SqlString, con))
                     {
                         cmd.Parameters.AddWithValue("nome", usuario.Nome);
                         cmd.Parameters.AddWithValue("senha", usuario.Senha);
                         cmd.Parameters.AddWithValue("email", usuario.Email);
-                        cmd.ExecuteNonQuery();
+                        int.TryParse(cmd.ExecuteScalar().ToString(), out id);
                     }
                 }
                 catch (Exception ex)
@@ -38,8 +39,7 @@ namespace BusinessLayer.DAL
                     con.Close();
                 }
             }
-            usuario.Id = Convert.ToInt32(GetLastIdInserted(usuario.Email));
-            return usuario;
+            return Obter(id);
         }
 
         public int? GetLastIdInserted(string email)
@@ -139,12 +139,45 @@ namespace BusinessLayer.DAL
 
         public List<Usuario> Listar()
         {
-            throw new NotImplementedException();
+            var lista = new List<Usuario>();
+            using (var con = new SqlConnection(this.ConnectionString))
+            {
+                con.Open();
+                try
+                {
+                    this.SqlString = "SELECT id, nome, email FROM Usuario;";
+                    using (var cmd = new SqlCommand(this.SqlString, con))
+                    {
+                        this.Dr = cmd.ExecuteReader();
+                        while(Dr.Read())
+                        {
+                            lista.Add(new Usuario
+                            {
+                                Id = Convert.ToInt32(Dr["id"].ToString()),
+                                Email = Dr["email"].ToString(),
+                                Nome = Dr["nome"].ToString()
+                            });
+                        };
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"300500 Erro não mapeado ao criar Usuario: {ex.Message}");
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            return lista;
         }
 
         public Usuario? Obter(int id)
         {
-            using (var con = this.Con)
+            using (var con = new SqlConnection(this.ConnectionString))
             {
                 con.Open();
                 try

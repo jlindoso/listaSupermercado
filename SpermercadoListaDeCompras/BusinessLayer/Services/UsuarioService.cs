@@ -3,6 +3,7 @@ using BusinessLayer.DAL.Interfaces;
 using BusinessLayer.Model;
 using BusinessLayer.Model.DTO.Usuario;
 using BusinessLayer.Services.Interfaces;
+using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +21,15 @@ namespace BusinessLayer.Services
             _usuarioDAO = new UsuarioDAO();
         }
 
-
-        public Usuario Cadastrar(UsuarioCadastroDTO usuarioDTO)
+        public Usuario? Cadastrar(UsuarioCadastroDTO usuarioDTO)
         {
-            return _usuarioDAO.Adicionar(new Usuario
+            var user = _usuarioDAO.Adicionar(new Usuario
             {
                 Email = usuarioDTO.Email,
                 Nome = usuarioDTO.Nome,
                 Senha = usuarioDTO.Senha
             });
+            return user;
         }
 
         public Usuario Editar(int id, UsuarioEditarDTO usuario)
@@ -53,17 +54,19 @@ namespace BusinessLayer.Services
             _usuarioDAO.Excluir(id);
         }
 
+        public List<Usuario> Listar()
+        { 
+            return _usuarioDAO.Listar();
+        }
+
         public Usuario? Login(UsuarioLoginDTO usuario)
         {
             var user = _usuarioDAO.Login(usuario.Email, usuario.Senha);
             if (user != null)
             {
-                //Usuario Existe login sucesso
+                return user;
             }
-
-
-
-            throw new Exception("");
+            return null;
         }
 
         public Usuario Obter(int id)

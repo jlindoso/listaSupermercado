@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Model;
 using BusinessLayer.Model.DTO.Usuario;
 using BusinessLayer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,14 +22,22 @@ namespace API.Controllers
         [HttpPost]
         public ActionResult<Usuario> Post([FromBody] UsuarioCadastroDTO usuarioCadastroDTO)
         {
-            return Created(string.Empty, _service.Cadastrar(usuarioCadastroDTO));
+            var user = _service.Cadastrar(usuarioCadastroDTO);
+            return Created(string.Empty,user);
         }
 
-        // GET: api/<UsuariosController>
-        [HttpGet]
+        // GET: api/<UsuariosController>/{id}
+        [HttpGet("id")]
+        [Authorize(Roles ="admin")]
         public Usuario Get([FromQuery] int id)
         {
             return _service.Obter(id);
+        }
+        // GET: api/<UsuariosController>
+        [HttpGet]
+        public ActionResult<List<Usuario>> Get()
+        {
+            return Ok(_service.Listar());
         }
 
         // PUT: api/<UsuariosController>

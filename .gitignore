@@ -1,2 +1,10 @@
 
 SpermercadoListaDeCompras/.vs/SpermercadoListaDeCompras/DesignTimeBuild/.dtbcache.v2
+*.v2
+*.vsidx
+*.dll
+*.dll
+*.props
+*.pdb
+*.cache
+*.targets

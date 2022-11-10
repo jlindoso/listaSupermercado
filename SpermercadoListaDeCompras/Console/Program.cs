@@ -5,16 +5,20 @@ using BusinessLayer.Services;
 using Newtonsoft.Json;
 
 
-var random = new Random().Next();
 
-var user = new UsuarioCadastroDTO
+
+int x = 12000;
+
+for(int i= 0; i<90000; i++)
 {
-    Nome = "teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste ",
-    Email = $"teste{random}@teste.com",
-    Senha = "123456"
-};
+    var user = new UsuarioCadastroDTO
+    {
+        Nome = $"teste {x}",
+        Email = $"teste{x}@teste.com",
+        Senha = "123456"
+    };
+    var userRecebido = new UsuarioService().Cadastrar(user);
+    x++;
+}
 
-
-var userRecebido = new UsuarioService().Cadastrar(user);
-
-Console.WriteLine(JsonConvert.SerializeObject(userRecebido));
+Console.WriteLine("terminou");

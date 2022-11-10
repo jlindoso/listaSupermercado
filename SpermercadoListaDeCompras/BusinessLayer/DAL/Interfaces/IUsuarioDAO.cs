@@ -11,9 +11,9 @@ namespace BusinessLayer.DAL.Interfaces
     {
         public List<Usuario> Listar();
         public Usuario? Obter(int id);
-        public Usuario Editar(int id, Usuario usuario);
+        public Usuario? Editar(int id, Usuario usuario);
         public void Excluir(int id);
-        public Usuario Adicionar(Usuario usuario);
+        public Usuario? Adicionar(Usuario usuario);
         public Usuario? Login(string email, string senha);
     }
 }

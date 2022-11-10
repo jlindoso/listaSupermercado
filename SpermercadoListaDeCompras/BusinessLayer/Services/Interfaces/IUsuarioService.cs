@@ -10,10 +10,11 @@ namespace BusinessLayer.Services.Interfaces
 {
     public interface IUsuarioService
     {
-        public Usuario Cadastrar(UsuarioCadastroDTO usuario);
+        public Usuario? Cadastrar(UsuarioCadastroDTO usuario);
         public Usuario Editar(int id, UsuarioEditarDTO usuario);
         public Usuario Obter(int id);
-        public Usuario Login(Usuario usuario);
+        public List<Usuario> Listar();
+        public Usuario Login(UsuarioLoginDTO usuario);
 
     }
 }
