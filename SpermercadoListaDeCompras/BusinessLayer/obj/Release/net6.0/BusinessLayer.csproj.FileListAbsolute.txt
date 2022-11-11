@@ -1,0 +1,5 @@
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\BusinessLayer\obj\Release\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\BusinessLayer\obj\Release\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\BusinessLayer\obj\Release\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\BusinessLayer\obj\Release\net6.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\BusinessLayer\obj\Release\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache

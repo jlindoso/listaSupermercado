@@ -1,0 +1,5 @@
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Release\net6.0\Repositorys.csproj.AssemblyReference.cache
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Release\net6.0\Repositorys.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Release\net6.0\Repositorys.AssemblyInfoInputs.cache
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Release\net6.0\Repositorys.AssemblyInfo.cs
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Release\net6.0\Repositorys.csproj.CoreCompileInputs.cache

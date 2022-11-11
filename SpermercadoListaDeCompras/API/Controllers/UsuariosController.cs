@@ -1,11 +1,8 @@
-﻿using BusinessLayer.Model;
-using BusinessLayer.Model.DTO.Usuario;
-using BusinessLayer.Services;
-using Microsoft.AspNetCore.Authorization;
+﻿using BusinessLayer.DAL.Interfaces;
+using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Repositorys.Usuario;
+using System.Data;
 
 namespace API.Controllers
 {
@@ -13,38 +10,45 @@ namespace API.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        public UsuarioService _service;
+        private IUsuarioRepository usuarioRepository;
         public UsuariosController()
         {
-            _service = new UsuarioService();
-        }
-        // POST: api/<UsuariosController>
-        [HttpPost]
-        public ActionResult<Usuario> Post([FromBody] UsuarioCadastroDTO usuarioCadastroDTO)
-        {
-            var user = _service.Cadastrar(usuarioCadastroDTO);
-            return Created(string.Empty,user);
+            this.usuarioRepository = new UsuarioRepository(new BusinessLayer.Context.ListaSupermercadoContext());
         }
 
-        // GET: api/<UsuariosController>/{id}
-        [HttpGet("id")]
-        [Authorize(Roles ="admin")]
-        public Usuario Get([FromQuery] int id)
-        {
-            return _service.Obter(id);
-        }
         // GET: api/<UsuariosController>
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            return Ok(_service.Listar());
+            return Ok(usuarioRepository.ObtemUsuarios());
         }
 
-        // PUT: api/<UsuariosController>
-        [HttpPut]
-        public Usuario Put([FromQuery] int id, [FromBody] UsuarioEditarDTO usuarioEditarDTO)
+        // GET: api/<UsuariosController>/{id}
+        [HttpGet("id")]
+        public Usuario Get([FromQuery] int id)
         {
-            return _service.Editar(id, usuarioEditarDTO);
+            Usuario usuario = usuarioRepository.ObtemUsuarioByID(id);
+            return usuario;
+        }
+
+        // POST: api/<UsuariosController>
+        [HttpPost]
+        public ActionResult Create([Bind(include: "Nome, Email, Senha")] Usuario usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    usuarioRepository.AdicionarUsuario(usuario);
+                    usuarioRepository.Save();
+                    return Ok("Usuário criado com sucesso");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError(string.Empty, "Não foi possível salvar o usuário");
+            }
+            return BadRequest("Não foi possível salvar o usuário");
         }
 
         // DELETE: api/<UsuariosController>
@@ -53,19 +57,35 @@ namespace API.Controllers
         {
             try
             {
-                _service.Excluir(id);
-
+                usuarioRepository.DeletarUsuario(id);
+                usuarioRepository.Save();
             }
             catch (Exception ex)
             {
-
-                if (ex.Message.Equals("404"))
-                {
-                    return NotFound("Usuario Não Encontrado");
-                }
+                return NotFound("Usuario Não Encontrado");
             }
             return Ok("Usuario excluido com sucesso!");
         }
 
+        // PUT: api/<UsuariosController>
+        [HttpPut]
+        public ActionResult Edit([Bind(include: "Nome, Email, Senha")] Usuario usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    usuarioRepository.AtualizarUsuario(usuario);
+                    usuarioRepository.Save();
+                    return Ok("Usuário atualizado com Sucesso");
+                }
+            }
+            catch (DataException)
+            {
+
+                ModelState.AddModelError(string.Empty, "Não foi possível salvar o usuário");
+            }
+            return BadRequest("Não foi possível salvar o usuário");
+        }
     }
 }

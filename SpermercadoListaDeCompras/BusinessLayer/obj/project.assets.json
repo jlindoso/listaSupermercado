@@ -1305,7 +1305,7 @@
           }
         }
       },
-      "System.Data.SqlClient/4.8.4": {
+      "System.Data.SqlClient/4.8.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
@@ -2639,6 +2639,16 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
         }
       }
     }
@@ -4664,10 +4674,10 @@
         "system.console.nuspec"
       ]
     },
-    "System.Data.SqlClient/4.8.4": {
-      "sha512": "45YflfcVXAu+Tnf0WnZzQIp9iGm+XvSvh8OosYHqax/nW3gV28NBSRvHFZ/IsuwV4JIypYCKBEOVzW+RB5+zgQ==",
+    "System.Data.SqlClient/4.8.5": {
+      "sha512": "fRqxut4lrndPHrXD+ht1XRmCL3obuKldm4XjCRYS9p5f7FSR7shBxAwTkDrpFMsHC9BhNgjjmUtiIjvehn5zkg==",
       "type": "package",
-      "path": "system.data.sqlclient/4.8.4",
+      "path": "system.data.sqlclient/4.8.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4744,7 +4754,7 @@
         "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.xml",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.xml",
-        "system.data.sqlclient.4.8.4.nupkg.sha512",
+        "system.data.sqlclient.4.8.5.nupkg.sha512",
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -8339,32 +8349,38 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Entities >= 1.0.0",
       "Microsoft.AspNet.WebApi.Core >= 5.2.9",
       "Microsoft.EntityFrameworkCore.Relational.Design >= 1.1.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
       "Swashbuckle.AspNetCore.Annotations >= 6.4.0",
-      "System.Data.SqlClient >= 4.8.4"
+      "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jlindoso\\.nuget\\packages\\": {}
+    "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\jlindoso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jlindoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\williamgabriel_frwk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8377,7 +8393,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -8414,7 +8434,7 @@
           },
           "System.Data.SqlClient": {
             "target": "Package",
-            "version": "[4.8.4, )"
+            "version": "[4.8.5, )"
           }
         },
         "imports": [
@@ -8433,7 +8453,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },

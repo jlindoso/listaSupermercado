@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj": {}
+    "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj": {
+    "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\jlindoso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\API\\obj\\",
+        "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jlindoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\williamgabriel_frwk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj"
+              },
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\Repositorys.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\Repositorys.csproj"
               }
             }
           }
@@ -44,31 +50,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.9, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.11, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.25.0, )"
             }
           },
           "imports": [
@@ -90,21 +78,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\jlindoso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jlindoso\\Documents\\GitHub\\ProgramaPadawan\\ListaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jlindoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\williamgabriel_frwk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,7 +105,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -154,7 +146,7 @@
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.4, )"
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -173,7 +165,121 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\williamgabriel_frwk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\Repositorys.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\Repositorys.csproj",
+        "projectName": "Repositorys",
+        "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\Repositorys.csproj",
+        "packagesPath": "C:\\Users\\williamgabriel_frwk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Repositorys\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\williamgabriel_frwk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
