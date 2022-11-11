@@ -1,19 +1,21 @@
-﻿using BusinessLayer.DAL.Interfaces;
+﻿using Entities.Interfaces;
 using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
-using Repositorys.Usuario;
 using System.Data;
+using Repositorys.Usuarios;
+using BusinessLayer.Context;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsuariosController : Controller
     {
-        private IUsuarioRepository usuarioRepository;
+        private readonly IUsuarioRepository usuarioRepository;
+
         public UsuariosController()
         {
-            this.usuarioRepository = new UsuarioRepository(new BusinessLayer.Context.ListaSupermercadoContext());
+            this.usuarioRepository = new UsuarioRepository(new ListaSupermercadoContext());
         }
 
         // GET: api/<UsuariosController>
@@ -25,9 +27,9 @@ namespace API.Controllers
 
         // GET: api/<UsuariosController>/{id}
         [HttpGet("id")]
-        public Usuario Get([FromQuery] int id)
+        public Usuario? Get([FromQuery] int id)
         {
-            Usuario usuario = usuarioRepository.ObtemUsuarioByID(id);
+            Usuario? usuario = usuarioRepository.ObtemUsuarioByID(id);
             return usuario;
         }
 
@@ -59,12 +61,12 @@ namespace API.Controllers
             {
                 usuarioRepository.DeletarUsuario(id);
                 usuarioRepository.Save();
+                return Ok("Usuario excluido com sucesso!");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return NotFound("Usuario Não Encontrado");
             }
-            return Ok("Usuario excluido com sucesso!");
         }
 
         // PUT: api/<UsuariosController>

@@ -172,6 +172,9 @@
             "projectReferences": {
               "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
                 "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj"
+              },
+              "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj"
               }
             }
           }

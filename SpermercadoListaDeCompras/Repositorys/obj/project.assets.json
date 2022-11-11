@@ -8096,7 +8096,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BusinessLayer >= 1.0.0"
+      "BusinessLayer >= 1.0.0",
+      "Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8128,6 +8129,9 @@
           "projectReferences": {
             "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\BusinessLayer\\BusinessLayer.csproj"
+            },
+            "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\williamgabriel_frwk\\Documents\\GitHub\\listaSupermercado\\SpermercadoListaDeCompras\\Entities\\Entities.csproj"
             }
           }
         }

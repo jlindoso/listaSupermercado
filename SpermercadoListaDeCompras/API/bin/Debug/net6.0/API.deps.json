@@ -1509,7 +1509,8 @@
       },
       "Repositorys/1.0.0": {
         "dependencies": {
-          "BusinessLayer": "1.0.0"
+          "BusinessLayer": "1.0.0",
+          "Entities": "1.0.0"
         },
         "runtime": {
           "Repositorys.dll": {}
