@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using BusinessLayer.Context;
 using Entities.Entity.Models;
-using Entities.Interfaces;
+using Repositorys.Context;
+using Repositorys.Interfaces;
 
 namespace Repositorys.Usuarios
 {

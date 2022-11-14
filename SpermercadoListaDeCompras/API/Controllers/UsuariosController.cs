@@ -3,7 +3,7 @@ using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using Repositorys.Usuarios;
-using BusinessLayer.Context;
+using Repositorys.Context;
 
 namespace API.Controllers
 {
@@ -35,7 +35,7 @@ namespace API.Controllers
 
         // POST: api/<UsuariosController>
         [HttpPost]
-        public ActionResult Create([Bind(include: "Nome, Email, Senha")] Usuario usuario)
+        public ActionResult Create([Bind(include: "nome, email, senha")] Usuario usuario)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace API.Controllers
 
         // PUT: api/<UsuariosController>
         [HttpPut]
-        public ActionResult Edit([Bind(include: "Nome, Email, Senha")] Usuario usuario)
+        public ActionResult Edit([Bind(include: "nome, email, senha")] Usuario usuario)
         {
             try
             {
