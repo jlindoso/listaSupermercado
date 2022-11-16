@@ -8,9 +8,9 @@ public partial class ProdutoSupermercado
 
     public int IdSupermercado { get; set; }
 
-    public string CodigoBarrasProduto { get; set; } = null!;
+    public string CodigoBarrasProduto { get; set; }
 
-    public virtual Produto CodigoBarrasProdutoNavigation { get; set; } = null!;
+    public virtual Produto CodigoBarrasProdutoNavigation { get; set; }
 
-    public virtual Supermercado Supermercado { get; set; } = null!;
+    public virtual Supermercado Supermercado { get; set; }
 }

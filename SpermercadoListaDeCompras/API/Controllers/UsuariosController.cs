@@ -1,9 +1,7 @@
-﻿using Entities.Interfaces;
+﻿using BusinessLayer.Services;
+using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using Repositorys.Usuarios;
-using Repositorys.Context;
 
 namespace API.Controllers
 {
@@ -11,25 +9,25 @@ namespace API.Controllers
     [ApiController]
     public class UsuariosController : Controller
     {
-        private readonly IUsuarioRepository usuarioRepository;
+        private readonly IUsuarioService _usuarioService;
 
         public UsuariosController()
         {
-            this.usuarioRepository = new UsuarioRepository(new ListaSupermercadoContext());
+            _usuarioService = new UsuarioService();
         }
 
         // GET: api/<UsuariosController>
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            return Ok(usuarioRepository.ObtemUsuarios());
+            return Ok( _usuarioService.ObtemUsuarios().Result);
         }
 
         // GET: api/<UsuariosController>/{id}
         [HttpGet("id")]
         public Usuario? Get([FromQuery] int id)
         {
-            Usuario? usuario = usuarioRepository.ObtemUsuarioByID(id);
+            Usuario? usuario = _usuarioService.ObtemUsuarioByID(id);
             return usuario;
         }
 
@@ -41,14 +39,13 @@ namespace API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    usuarioRepository.AdicionarUsuario(usuario);
-                    usuarioRepository.Save();
+                    _usuarioService.AdicionarUsuario(usuario);
                     return Ok("Usuário criado com sucesso");
                 }
             }
-            catch (DataException)
+            catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty, "Não foi possível salvar o usuário");
+                throw new Exception("Não foi possível criar usuário" + ex.Message);
             }
             return BadRequest("Não foi possível salvar o usuário");
         }
@@ -59,8 +56,7 @@ namespace API.Controllers
         {
             try
             {
-                usuarioRepository.DeletarUsuario(id);
-                usuarioRepository.Save();
+                _usuarioService.DeletarUsuario(id);
                 return Ok("Usuario excluido com sucesso!");
             }
             catch (Exception)
@@ -77,15 +73,14 @@ namespace API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    usuarioRepository.AtualizarUsuario(usuario);
-                    usuarioRepository.Save();
+                    _usuarioService.AtualizarUsuario(usuario);
                     return Ok("Usuário atualizado com Sucesso");
                 }
             }
-            catch (DataException)
+            catch (Exception)
             {
 
-                ModelState.AddModelError(string.Empty, "Não foi possível salvar o usuário");
+                throw new Exception("Não foi possível atualizar usuário");
             }
             return BadRequest("Não foi possível salvar o usuário");
         }

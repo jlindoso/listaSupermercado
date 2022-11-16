@@ -3,7 +3,7 @@ using Entities.Entity.Models;
 using Repositorys.Context;
 using Repositorys.Interfaces;
 
-namespace Repositorys.Usuarios
+namespace Repositorys.Repos
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -16,11 +16,13 @@ namespace Repositorys.Usuarios
         public void AdicionarUsuario(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
         }
 
         public void AtualizarUsuario(Usuario usuario)
         {
             _context.Entry(usuario).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public void DeletarUsuario(int id)
@@ -29,20 +31,21 @@ namespace Repositorys.Usuarios
             if (usuario != null)
             {
                 _context.Usuarios.Remove(usuario);
+                _context.SaveChanges();
             }
         }
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!disposed)
             {
                 if (disposing)
                 {
                     _context.Dispose();
                 }
             }
-            this.disposed = true;
+            disposed = true;
         }
         public void Dispose()
         {
@@ -55,9 +58,9 @@ namespace Repositorys.Usuarios
             return _context.Usuarios.Find(id);
         }
 
-        public IEnumerable<Usuario> ObtemUsuarios()
+        public async Task<IEnumerable<Usuario>> ObtemUsuarios()
         {
-            return _context.Usuarios.ToList();
+            return await _context.Usuarios.Take(10).ToListAsync();
         }
 
         public void Save()

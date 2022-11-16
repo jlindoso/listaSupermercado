@@ -1,6 +1,8 @@
 ﻿using Entities.Entity.Models;
-using Repositorys.Usuario;
 using Repositorys.Interfaces;
+using Repositorys.Context;
+using BusinessLayer.Services.Interfaces;
+using Repositorys.Repos;
 
 namespace BusinessLayer.Services
 {
@@ -9,7 +11,7 @@ namespace BusinessLayer.Services
         private readonly IUsuarioRepository _usuarioRepository;
         public UsuarioService()
         {
-            _usuarioRepository = new UsuarioRepository();
+            _usuarioRepository = new UsuarioRepository(new ListaSupermercadoContext());
         }
         public void AdicionarUsuario(Usuario usuario)
         {
@@ -31,9 +33,9 @@ namespace BusinessLayer.Services
             return _usuarioRepository.ObtemUsuarioByID(id);
         }
 
-        public IEnumerable<Usuario> ObtemUsuarios()
+        public async Task<IEnumerable<Usuario>> ObtemUsuarios()
         {
-            return _usuarioRepository.ObtemUsuarios();
+            return await _usuarioRepository.ObtemUsuarios();
         }
     }
 }

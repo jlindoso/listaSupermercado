@@ -9,8 +9,4 @@ public partial class Produto
     public string? Descricao { get; set; }
 
     public string? Foto { get; set; }
-
-    public virtual ICollection<ItemListum> ItemLista { get; } = new List<ItemListum>();
-
-    public virtual ICollection<ProdutoSupermercado> ProdutoSupermercados { get; } = new List<ProdutoSupermercado>();
 }

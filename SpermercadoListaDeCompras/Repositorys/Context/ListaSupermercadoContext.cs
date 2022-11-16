@@ -45,14 +45,17 @@ public partial class ListaSupermercadoContext : DbContext
                 .HasColumnType("decimal(18, 0)");
             entity.Property(e => e.Quantidade).HasDefaultValueSql("((0))");
 
-            entity.HasOne(d => d.CodigoBarrasProdutoNavigation).WithMany(p => p.ItemLista)
+            entity.HasOne(d => d.CodigoBarrasProdutoNavigation).WithMany()
                 .HasForeignKey(d => d.CodigoBarrasProduto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__ItemLista__Codig__398D8EEE");
 
-            entity.HasOne(d => d.IdSupermercadoNavigation).WithMany(p => p.ItemLista)
+            entity.HasOne(d => d.IdSupermercadoNavigation).WithMany()
                 .HasForeignKey(d => d.IdSupermercado)
                 .HasConstraintName("FK__ItemLista__IdSup__38996AB5");
+
+            entity.HasOne(d => d.IdListumNavigation).WithMany()
+            .HasForeignKey(d => d.IdLista);
         });
 
         modelBuilder.Entity<Listum>(entity =>
@@ -67,10 +70,7 @@ public partial class ListaSupermercadoContext : DbContext
                 .HasDefaultValueSql("((0.0))")
                 .HasColumnType("decimal(18, 0)");
 
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Lista)
-                .HasForeignKey(d => d.IdUsuario)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Lista__IdUsuario__2E1BDC42");
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany().HasForeignKey(d => d.IdUsuario);
         });
 
         modelBuilder.Entity<Produto>(entity =>
@@ -106,12 +106,12 @@ public partial class ListaSupermercadoContext : DbContext
                 .HasDefaultValueSql("((0.0))")
                 .HasColumnType("decimal(18, 0)");
 
-            entity.HasOne(d => d.CodigoBarrasProdutoNavigation).WithMany(p => p.ProdutoSupermercados)
+            entity.HasOne(d => d.CodigoBarrasProdutoNavigation).WithMany()
                 .HasForeignKey(d => d.CodigoBarrasProduto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__produtoSu__Codig__32E0915F");
 
-            entity.HasOne(d => d.Supermercado).WithMany(p => p.ProdutoSupermercados)
+            entity.HasOne(d => d.Supermercado).WithMany()
                 .HasForeignKey(d => d.IdSupermercado)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__produtoSu__IdSup__31EC6D26");

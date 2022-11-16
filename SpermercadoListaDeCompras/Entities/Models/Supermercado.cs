@@ -15,8 +15,4 @@ public partial class Supermercado
     public string? Estado { get; set; }
 
     public string? Cep { get; set; }
-
-    public virtual ICollection<ItemListum> ItemLista { get; } = new List<ItemListum>();
-
-    public virtual ICollection<ProdutoSupermercado> ProdutoSupermercados { get; } = new List<ProdutoSupermercado>();
 }
