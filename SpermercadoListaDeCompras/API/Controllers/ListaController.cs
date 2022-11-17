@@ -1,4 +1,4 @@
-﻿using BusinessLayer.DTO;
+﻿using BusinessLayer.DTO.ListaDTO;
 using BusinessLayer.Services;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
@@ -16,7 +16,6 @@ namespace API.Controllers
             _listaService = new ListaService();
         }
 
-        // Chamada parece redundante 
         // GET: api/<ListaController>
         [HttpGet("usuario/{idUsuario}")]
         public async Task<ActionResult<List<Usuario>>> GetFromUsuario([FromRoute] int idUsuario)
@@ -24,7 +23,6 @@ namespace API.Controllers
             return Ok(await _listaService.ObtemListasPorUsuario(idUsuario));
         }
 
-        // Também parece redundante
         // GET: api/<ListaController>
         [HttpGet("{id}")]
         public Listum? Get([FromRoute] int id)

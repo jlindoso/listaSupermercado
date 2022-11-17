@@ -37,12 +37,13 @@ namespace Repositorys.Repos
 
         public Listum? ObtemListaByID(int id)
         {
-            return _context.Lista.Find(id);
+            Listum? lista = _context.Lista.Include(l => l.IdUsuarioNavigation).FirstOrDefault(x => x.Id == id);
+            return lista;
         }
 
         public async Task<IEnumerable<Listum>> ObtemListasPorUsuario(int idUsuario)
         {
-            return await _context.Lista.
+            return await _context.Lista.Include(p => p.IdUsuarioNavigation).
                 Where(p => p.IdUsuario == idUsuario)
                 .ToListAsync();
         }

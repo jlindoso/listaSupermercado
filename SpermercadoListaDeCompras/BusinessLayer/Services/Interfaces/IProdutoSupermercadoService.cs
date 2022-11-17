@@ -1,4 +1,4 @@
-﻿using BusinessLayer.DTO;
+﻿using BusinessLayer.DTO.ProdutoSupermercadoDTO;
 using Entities.Entity.Models;
 
 namespace BusinessLayer.Services.Interfaces

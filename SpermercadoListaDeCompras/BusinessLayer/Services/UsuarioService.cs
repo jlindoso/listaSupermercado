@@ -3,6 +3,7 @@ using Repositorys.Interfaces;
 using Repositorys.Context;
 using BusinessLayer.Services.Interfaces;
 using Repositorys.Repos;
+using BusinessLayer.DTO.UsuarioDTO;
 
 namespace BusinessLayer.Services
 {
@@ -28,9 +29,15 @@ namespace BusinessLayer.Services
             _usuarioRepository.DeletarUsuario(id);
         }
 
-        public Usuario? ObtemUsuarioByID(int id)
+        public BuscarUsuarioDTO? ObtemUsuarioByID(int id)
         {
-            return _usuarioRepository.ObtemUsuarioByID(id);
+            Usuario? usuario = _usuarioRepository.ObtemUsuarioByID(id);
+            BuscarUsuarioDTO? usuarioBuscado = new(){
+                Id = usuario.Id,
+                Nome = usuario.Nome,
+                Email = usuario.Email,
+            };
+            return usuarioBuscado;
         }
 
         public async Task<IEnumerable<Usuario>> ObtemUsuarios()

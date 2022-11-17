@@ -3,7 +3,7 @@ using Entities.Entity.Models;
 using Repositorys.Interfaces;
 using Repositorys.Repos;
 using Repositorys.Context;
-using BusinessLayer.DTO;
+using BusinessLayer.DTO.ProdutoSupermercadoDTO;
 
 namespace BusinessLayer.Services
 {

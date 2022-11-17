@@ -13,4 +13,5 @@ public partial class Listum
     public int IdUsuario { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }
+    public virtual ICollection<ItemListum> ItemLista { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services;
+﻿using BusinessLayer.DTO.UsuarioDTO;
+using BusinessLayer.Services;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -25,15 +26,15 @@ namespace API.Controllers
 
         // GET: api/<UsuariosController>/{id}
         [HttpGet("id")]
-        public Usuario? Get([FromQuery] int id)
+        public BuscarUsuarioDTO? Get([FromQuery] int id)
         {
-            Usuario? usuario = _usuarioService.ObtemUsuarioByID(id);
+            BuscarUsuarioDTO? usuario = _usuarioService.ObtemUsuarioByID(id);
             return usuario;
         }
 
         // POST: api/<UsuariosController>
         [HttpPost]
-        public ActionResult Create([Bind(include: "nome, email, senha")] Usuario usuario)
+        public ActionResult Create([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
             try
             {
@@ -67,7 +68,7 @@ namespace API.Controllers
 
         // PUT: api/<UsuariosController>
         [HttpPut]
-        public ActionResult Edit([Bind(include: "nome, email, senha")] Usuario usuario)
+        public ActionResult Edit([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
             try
             {

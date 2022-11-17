@@ -1,4 +1,5 @@
-﻿using Entities.Entity.Models;
+﻿using BusinessLayer.DTO.UsuarioDTO;
+using Entities.Entity.Models;
 
 namespace BusinessLayer.Services.Interfaces
 {
@@ -7,7 +8,7 @@ namespace BusinessLayer.Services.Interfaces
         public void AdicionarUsuario(Usuario usuario);
         public void AtualizarUsuario(Usuario usuario);
         public void DeletarUsuario(int id);
-        public Usuario? ObtemUsuarioByID(int id);
+        public BuscarUsuarioDTO? ObtemUsuarioByID(int id);
         public Task<IEnumerable<Usuario>> ObtemUsuarios();
     }
 }

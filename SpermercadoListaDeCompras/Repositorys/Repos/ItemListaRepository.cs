@@ -2,6 +2,7 @@
 using Repositorys.Context;
 using Repositorys.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Repositorys.DTO;
 
 namespace Repositorys.Repos
 {
@@ -15,11 +16,13 @@ namespace Repositorys.Repos
         public void AdicionarItemLista(ItemListum itemLista)
         {
             _context.ItemLista.Add(itemLista);
+            _context.SaveChanges();
         }
 
         public void AtualizarItemLista(ItemListum itemLista)
         {
             _context.Entry(itemLista).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public void DeletarItemLista(int id)
@@ -37,10 +40,19 @@ namespace Repositorys.Repos
             return _context.ItemLista.Find(id);
         }
 
-        public async Task<IEnumerable<ItemListum>> ObtemItemPorLista(int idLista)
+        public IEnumerable<BuscarItemLista> ObtemItemPorLista(int idLista)
         {
-            return await _context.ItemLista.Where(i => i.IdLista == idLista).ToListAsync();
-        }
+            return _context.ItemLista.Where(x => x.IdLista == idLista)
+                .Select(x => new BuscarItemLista{ 
+                    Id = x.Id, 
+                    Quantidade = x.Quantidade,
+                    Comprado = x.Comprado,
+                    Preco = x.Preco, 
+                    IdSupermercado = x.IdSupermercado, 
+                    CodigoBarrasProduto = x.CodigoBarrasProduto, 
+                    IdLista = x.IdLista })
+                .ToList();
+         }
 
         public void Save()
         {

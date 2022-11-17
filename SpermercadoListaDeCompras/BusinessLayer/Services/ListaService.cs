@@ -1,4 +1,4 @@
-﻿using BusinessLayer.DTO;
+﻿using BusinessLayer.DTO.ListaDTO;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
 using Repositorys.Interfaces;

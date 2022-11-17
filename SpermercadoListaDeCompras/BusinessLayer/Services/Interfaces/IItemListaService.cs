@@ -1,14 +1,15 @@
-﻿using BusinessLayer.DTO.ItemListaDTO;
-using Entities.Entity.Models;
+﻿using BusinessLayer.DTO;
+using BusinessLayer.DTO.ItemListaDTO;
+using Repositorys.DTO;
 
 namespace BusinessLayer.Services.Interfaces
 {
     public interface IItemListaService
     {
         public void AdicionarItemLista(CriarItemListaDTO itemLista);
-        public void AtualizarItemLista(AtualizarItemListaDTO itemLista);
+        public void AtualizarItemLista(BaseItemListaDTO itemLista);
         public void DeletarItemLista(int id);
-        public ItemListum? ObtemItemListaByID(int id);
-        public Task<IEnumerable<ItemListum>> ObtemItemPorLista(int idLista);
+        public BuscarItemListaDTO? ObtemItemListaByID(int id);
+        public IEnumerable<BuscarItemLista> ObtemItemPorLista(int idLista);
     }
 }

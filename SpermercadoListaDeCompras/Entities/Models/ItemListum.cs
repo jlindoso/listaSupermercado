@@ -15,5 +15,5 @@ public partial class ItemListum
     public int IdLista { get; set; }
     public virtual Produto CodigoBarrasProdutoNavigation { get; set; }
     public virtual Supermercado? IdSupermercadoNavigation { get; set; }
-    public virtual ItemListum IdListumNavigation { get; set; }
+    public virtual Listum IdListumNavigation { get; set; }
 }
