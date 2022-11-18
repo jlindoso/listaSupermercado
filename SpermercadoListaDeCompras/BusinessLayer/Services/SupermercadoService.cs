@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.Interfaces;
+﻿using BusinessLayer.DTO.SupermercadoDTO;
+using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
 using Repositorys.Context;
 using Repositorys.Interfaces;
@@ -13,9 +14,18 @@ namespace BusinessLayer.Services
         {
             _supermercadoRepository = new SupermercadoRepository(new ListaSupermercadoContext());
         }
-        public void AdicionarSupermercado(Supermercado supermercado)
+        public void AdicionarSupermercado(CriarSupermercadoDTO supermercado)
         {
-            _supermercadoRepository.AdicionarSupermercado(supermercado);
+            Supermercado mercado = new()
+            {
+                Nome = supermercado.Nome,
+                Logradouro = supermercado.Logradouro,
+                Cidade = supermercado.Cidade,
+                Bairro = supermercado.Bairro,
+                Estado = supermercado.Estado,
+                Cep = supermercado.Cep,
+            };
+            _supermercadoRepository.AdicionarSupermercado(mercado);
         }
 
         public void AtualizarSupermercado(Supermercado supermercado)

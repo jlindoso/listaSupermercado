@@ -13,3 +13,8 @@ C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoLista
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\obj\Debug\net6.0\Entities.pdb
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\obj\Debug\net6.0\ref\Entities.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\bin\Debug\net6.0\xunit.assert.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\bin\Debug\net6.0\xunit.core.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Entities\obj\Debug\net6.0\Entities.csproj.CopyComplete

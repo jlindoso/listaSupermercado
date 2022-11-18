@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services;
+﻿using BusinessLayer.DTO.SupermercadoDTO;
+using BusinessLayer.Services;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +34,7 @@ namespace API.Controllers
 
         // POST: api/<SupermercadoController>
         [HttpPost]
-        public ActionResult Create([Bind(include: "nome, logradouro, cidade, bairro, estado, cep")] Supermercado supermercado)
+        public ActionResult Create([Bind(include: "nome, logradouro, cidade, bairro, estado, cep")] CriarSupermercadoDTO supermercado)
         {
             try
             {

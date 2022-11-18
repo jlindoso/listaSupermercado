@@ -29,6 +29,29 @@ namespace BusinessLayer.Services
             _usuarioRepository.DeletarUsuario(id);
         }
 
+        public dynamic Login(string email, string senha)
+        {
+            try
+            {
+                Usuario usuario = _usuarioRepository.Get(email, senha);
+                if (usuario != null)
+                {
+                    var token = TokenService.GenerateToken(usuario);
+                    usuario.Senha = "";
+                    return new
+                    {
+                        usario = usuario,
+                        token = token
+                    };
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Usuário ou senha inválidos");
+            }
+            return null;
+        }
+
         public BuscarUsuarioDTO? ObtemUsuarioByID(int id)
         {
             Usuario? usuario = _usuarioRepository.ObtemUsuarioByID(id);

@@ -192,3 +192,8 @@ C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoLista
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\API.pdb
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.assert.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs

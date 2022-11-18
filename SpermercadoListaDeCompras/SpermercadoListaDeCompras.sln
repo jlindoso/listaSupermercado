@@ -16,7 +16,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorys", "Repositorys\
 		{E0011278-6612-4AD5-8BA4-D673E063DB2E} = {E0011278-6612-4AD5-8BA4-D673E063DB2E}
 	EndProjectSection
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ListaSupermercado", "..\..\..\..\source\repos\ListaSupermercado\ListaSupermercado.sqlproj", "{13D79E65-B0AD-4532-9AA3-02776C546625}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{0BD08851-310E-4BA3-913E-5D9248DB660F}"
+	ProjectSection(SolutionItems) = preProject
+		Considerações.txt = Considerações.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,12 +47,6 @@ Global
 		{57B1F318-FC3A-4612-BF19-B85D94F019D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57B1F318-FC3A-4612-BF19-B85D94F019D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57B1F318-FC3A-4612-BF19-B85D94F019D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13D79E65-B0AD-4532-9AA3-02776C546625}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

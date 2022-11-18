@@ -74,3 +74,7 @@ C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoLista
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Debug\net6.0\Repositorys.pdb
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Debug\net6.0\Repositorys.genruntimeconfig.cache
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\obj\Debug\net6.0\ref\Repositorys.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\bin\Debug\net6.0\xunit.assert.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\bin\Debug\net6.0\xunit.core.dll
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\Repositorys\bin\Debug\net6.0\xunit.execution.dotnet.dll

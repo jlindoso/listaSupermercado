@@ -67,5 +67,10 @@ namespace Repositorys.Repos
         {
             _context.SaveChanges();
         }
+
+        public Usuario Get(string email, string senha)
+        {
+            return _context.Usuarios.Where(x => x.Email.ToLower() == email.ToLower() && x.Senha == x.Senha).FirstOrDefault();
+        }
     }
 }

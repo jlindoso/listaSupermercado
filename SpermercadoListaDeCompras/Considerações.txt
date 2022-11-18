@@ -1,0 +1,24 @@
+O que falta:
+
+Configurar Autorização
+Remover referencia circular entre lista e itemLista
+Tratar erros
+Testes
+
+
+------------------------
+
+
+Estrutura
+
+Entity
+  Contém os modelos que baseiam o resto da estrutura
+
+Repository
+  Contém como os modelos devem ser tratados no banco de dados e o contexto
+
+Business
+  Contém as regras de negócio
+
+API
+  Contém a camada de acesso

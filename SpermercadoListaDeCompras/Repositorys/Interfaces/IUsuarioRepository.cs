@@ -9,6 +9,7 @@ namespace Repositorys.Interfaces
         public void DeletarUsuario(int id);
         public Usuario? ObtemUsuarioByID(int id);
         public Task<IEnumerable<Usuario>> ObtemUsuarios();
+        public Usuario Get(string email, string senha);
         public void Save();
     }
 }

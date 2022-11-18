@@ -1,4 +1,5 @@
-﻿using BusinessLayer.DTO.UsuarioDTO;
+﻿using BusinessLayer.DTO;
+using BusinessLayer.DTO.UsuarioDTO;
 using BusinessLayer.Services;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
@@ -17,14 +18,12 @@ namespace API.Controllers
             _usuarioService = new UsuarioService();
         }
 
-        // GET: api/<UsuariosController>
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
             return Ok( _usuarioService.ObtemUsuarios().Result);
         }
 
-        // GET: api/<UsuariosController>/{id}
         [HttpGet("id")]
         public BuscarUsuarioDTO? Get([FromQuery] int id)
         {
@@ -32,7 +31,6 @@ namespace API.Controllers
             return usuario;
         }
 
-        // POST: api/<UsuariosController>
         [HttpPost]
         public ActionResult Create([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
@@ -51,7 +49,6 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar o usuário");
         }
 
-        // DELETE: api/<UsuariosController>
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
@@ -66,7 +63,6 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<UsuariosController>
         [HttpPut]
         public ActionResult Edit([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
@@ -84,6 +80,12 @@ namespace API.Controllers
                 throw new Exception("Não foi possível atualizar usuário");
             }
             return BadRequest("Não foi possível salvar o usuário");
+        }
+
+        [HttpPost("login")]
+        public ActionResult<dynamic> Authenticate([FromBody] LoginUsuarioDTO usuario)
+        {
+            return _usuarioService.Login(usuario.Email, usuario.Senha);
         }
     }
 }

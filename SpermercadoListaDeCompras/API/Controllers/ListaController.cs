@@ -18,7 +18,7 @@ namespace API.Controllers
 
         // GET: api/<ListaController>
         [HttpGet("usuario/{idUsuario}")]
-        public async Task<ActionResult<List<Usuario>>> GetFromUsuario([FromRoute] int idUsuario)
+        public async Task<ActionResult<List<Listum>>> GetFromUsuario([FromRoute] int idUsuario)
         {
             return Ok(await _listaService.ObtemListasPorUsuario(idUsuario));
         }
