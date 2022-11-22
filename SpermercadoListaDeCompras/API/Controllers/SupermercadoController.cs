@@ -17,14 +17,16 @@ namespace API.Controllers
             _supermercadoService = new SupermercadoService();
         }
 
-        // GET: api/<SupermercadoController>
+        /// <summary>Retorna todos os supermercados cadastrados</summary>
+        /// <response code="200">Retorna uma lista com supermercados cadastrados</response>
         [HttpGet]
         public ActionResult<List<Supermercado>> Get()
         {
             return Ok(_supermercadoService.ObtemSupermercados().Result);
         }
 
-        // GET: api/<SupermercadoController>/{id}
+        /// <summary>Retorna o supermercado pelo id informado</summary>
+        /// <response code="200">Retorna o supemercado o qual foi informado o id</response>
         [HttpGet("id")]
         public Supermercado? Get([FromQuery] int id)
         {
@@ -32,7 +34,8 @@ namespace API.Controllers
             return supermercado;
         }
 
-        // POST: api/<SupermercadoController>
+        /// <summary>Cria um novo supermercado</summary>
+        /// <response code="200">Retorna que o supermercado foi criado com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "nome, logradouro, cidade, bairro, estado, cep")] CriarSupermercadoDTO supermercado)
         {
@@ -51,7 +54,8 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar o usuário");
         }
 
-        // DELETE: api/<SupermercadoController>
+        /// <summary>Deleta um supermercado</summary>
+        /// <response code="200">Retorna que o supermercado foi deletado com sucesso</response>
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
@@ -66,7 +70,8 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<SupermercadoController>
+        /// <summary>Atualiza um supermercado</summary>
+        /// <response code="200">Retorna que o supermercado foi atualizado com sucesso</response>
         [HttpPut]
         public ActionResult Edit([Bind(include: "nome, logradouro, cidade, bairro, estado, cep")] Supermercado supermercado)
         {

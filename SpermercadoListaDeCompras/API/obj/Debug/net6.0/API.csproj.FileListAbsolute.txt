@@ -197,3 +197,5 @@ C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoLista
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.core.dll
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
 C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\bin\Debug\net6.0\API.xml
+C:\Users\williamgabriel_frwk\Documents\GitHub\listaSupermercado\SpermercadoListaDeCompras\API\obj\Debug\net6.0\API.xml

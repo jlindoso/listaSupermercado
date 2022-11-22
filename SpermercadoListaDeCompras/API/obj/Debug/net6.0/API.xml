@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.Controllers.ItemListaController.GetFromLista(System.Int32)">
+            <summary>Busca os items dentro de uma lista</summary>
+            <response code="200">Retorna os items de lista que foram buscados</response>
+        </member>
+        <member name="M:API.Controllers.ItemListaController.Get(System.Int32)">
+            <summary>Busca um item de lista por id</summary>
+            <response code="200">Retorna o item de lista buscado</response>
+        </member>
+        <member name="M:API.Controllers.ItemListaController.Create(BusinessLayer.DTO.ItemListaDTO.CriarItemListaDTO)">
+            <summary>Cria um novo item de lista</summary>
+            <response code="200">Retorna que o item foi criado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ItemListaController.Delete(System.Int32)">
+            <summary>Deleta um item de lista, por id</summary>
+            <response code="200">Retorna que o item foi deletado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ItemListaController.Edit(BusinessLayer.DTO.ItemListaDTO.BaseItemListaDTO)">
+            <summary>Atualiza um item de lista</summary>
+            <response code="200">Retorna que o item foi atualizado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ListaController.GetFromUsuario">
+            <summary>Retorna listas que pertençam ao usuário que está logado no momento</summary>
+            <response code="200">Retorna listas que pertençam ao usuário que está logado no momento</response>
+            <response code="401">Não autorizado</response>
+        </member>
+        <member name="M:API.Controllers.ListaController.Get(System.Int32)">
+            <summary>Retorna listas que tenha o id informado</summary>
+            <response code="200">Retorna lista que possua o id informado</response>
+        </member>
+        <member name="M:API.Controllers.ListaController.Create(BusinessLayer.DTO.ListaDTO.ListaDTO)">
+            <summary>Cria uma nova lista</summary>
+            <response code="200">Retorna que a nova lista foi criada com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ListaController.Delete(System.Int32)">
+            <summary>Deleta uma lista por id</summary>
+            <response code="200">Retorna que a lista, a qual foi informado o id, foi deletada</response>
+        </member>
+        <member name="M:API.Controllers.ListaController.Edit(Entities.Entity.Models.Listum)">
+            <summary>Atualiza uma lista</summary>
+            <response code="200">Retorna que a lista, a qual foi informado o id, foi deletada</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoController.Get">
+            <summary>Busca todos os produtos cadastrados</summary>
+            <response code="200">Retorna uma lista com os produtos cadastrados</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoController.Get(System.String)">
+            <summary>Busca um produto por seu id</summary>
+            <response code="200">Retorna o produto buscado</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoController.Create(Entities.Entity.Models.Produto)">
+            <summary>Cria um novo produto</summary>
+            <response code="200">Retorna que o produto foi criado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoController.Delete(System.String)">
+            <summary>Deleta um produto por seu id</summary>
+            <response code="200">Retorna que o produto foi deletado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoController.Edit(Entities.Entity.Models.Produto)">
+            <summary>Atualiza um produto</summary>
+            <response code="200">Retorna que o produto foi atualizado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoSupermercadoController.Get(System.String)">
+            <summary>Retorna o(s) produto(s) que já tenha(m) sido cadastrado(s) no(s) supermercado(s)</summary>
+            <response code="200">Retorna o(s) produto(s)</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoSupermercadoController.Get(System.Int32)">
+            <summary>Retorna um produto por seu id</summary>
+            <response code="200">Retorna o produto que teve o id informado</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoSupermercadoController.Create(BusinessLayer.DTO.ProdutoSupermercadoDTO.CriarProdutoSupermercadoDTO)">
+            <summary>Cria uma nova relação de produto x supermercado</summary>
+            <response code="200">Retorna que a relação foi criada com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoSupermercadoController.Delete(System.Int32)">
+            <summary>Exclui uma relação de produto x supermercado, por id</summary>
+            <response code="200">Retorna que relação foi excluida com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.ProdutoSupermercadoController.Edit(BusinessLayer.DTO.ProdutoSupermercadoDTO.AtualizarProdutoSupermercadoDTO)">
+            <summary>Atualiza uma relação de produto x supermercado</summary>
+            <response code="200">Retorna que a relação foi atualizada com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.SupermercadoController.Get">
+            <summary>Retorna todos os supermercados cadastrados</summary>
+            <response code="200">Retorna uma lista com supermercados cadastrados</response>
+        </member>
+        <member name="M:API.Controllers.SupermercadoController.Get(System.Int32)">
+            <summary>Retorna o supermercado pelo id informado</summary>
+            <response code="200">Retorna o supemercado o qual foi informado o id</response>
+        </member>
+        <member name="M:API.Controllers.SupermercadoController.Create(BusinessLayer.DTO.SupermercadoDTO.CriarSupermercadoDTO)">
+            <summary>Cria um novo supermercado</summary>
+            <response code="200">Retorna que o supermercado foi criado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.SupermercadoController.Delete(System.Int32)">
+            <summary>Deleta um supermercado</summary>
+            <response code="200">Retorna que o supermercado foi deletado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.SupermercadoController.Edit(Entities.Entity.Models.Supermercado)">
+            <summary>Atualiza um supermercado</summary>
+            <response code="200">Retorna que o supermercado foi atualizado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Get">
+            <summary>Retorna todos os usuários</summary>
+            <response code="200">Retorna uma lista com os usuários cadastrados</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Get(System.Int32)">
+            <summary>Retorna um usuário pelo seu id</summary>
+            <response code="200">Retorna usuário que foi informado o id</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Create(Entities.Entity.Models.Usuario)">
+            <summary>Cria um novo usuário</summary>
+            <response code="200">Retorna que o usuário foi criado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>Deleta um usuário por seu id</summary>
+            <response code="200">Retorna que o usuário, que foi informado o id, foi deletado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Edit(Entities.Entity.Models.Usuario)">
+            <summary>Atualiza um usuário</summary>
+            <response code="200">Retorna que o usuário, que foi informado o id, foi atualizado com sucesso</response>
+        </member>
+        <member name="M:API.Controllers.UsuariosController.Authenticate(BusinessLayer.DTO.LoginUsuarioDTO)">
+            <summary>Obtêm um token de autenticação de usuário</summary>
+            <response code="200">Retorna o token de autentição do usuário</response>
+        </member>
+    </members>
+</doc>

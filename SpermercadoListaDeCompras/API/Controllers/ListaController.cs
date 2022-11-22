@@ -2,7 +2,9 @@
 using BusinessLayer.Services;
 using BusinessLayer.Services.Interfaces;
 using Entities.Entity.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
@@ -16,14 +18,19 @@ namespace API.Controllers
             _listaService = new ListaService();
         }
 
-        // GET: api/<ListaController>
-        [HttpGet("usuario/{idUsuario}")]
-        public async Task<ActionResult<List<Listum>>> GetFromUsuario([FromRoute] int idUsuario)
+        /// <summary>Retorna listas que pertençam ao usuário que está logado no momento</summary>
+        /// <response code="200">Retorna listas que pertençam ao usuário que está logado no momento</response>
+        /// <response code="401">Não autorizado</response>
+        [HttpGet("usuario")]
+        [Authorize]
+        public async Task<ActionResult<List<Listum>>> GetFromUsuario()
         {
-            return Ok(await _listaService.ObtemListasPorUsuario(idUsuario));
+            var idUsuario = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return Ok(await _listaService.ObtemListasPorUsuario(Convert.ToInt32(idUsuario)));
         }
 
-        // GET: api/<ListaController>
+        /// <summary>Retorna listas que tenha o id informado</summary>
+        /// <response code="200">Retorna lista que possua o id informado</response>
         [HttpGet("{id}")]
         public Listum? Get([FromRoute] int id)
         {
@@ -31,8 +38,11 @@ namespace API.Controllers
             return lista;
         }
 
-        // POST: api/<ListaController>
+
+        /// <summary>Cria uma nova lista</summary>
+        /// <response code="200">Retorna que a nova lista foi criada com sucesso</response>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([Bind(include: "DataLista, Total, EstaAtivo, idUsuario")] ListaDTO lista)
         {
             try
@@ -50,7 +60,8 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar a lista ");
         }
 
-        // DELETE: api/<ListaController>
+        /// <summary>Deleta uma lista por id</summary>
+        /// <response code="200">Retorna que a lista, a qual foi informado o id, foi deletada</response>
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
@@ -65,7 +76,9 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<ListaController>
+
+        /// <summary>Atualiza uma lista</summary>
+        /// <response code="200">Retorna que a lista, a qual foi informado o id, foi deletada</response>
         [HttpPut]
         public ActionResult Edit([Bind(include: "DataLista, Total, EstaAtivo, idUsuario")] Listum lista)
         {

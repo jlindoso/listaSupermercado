@@ -15,14 +15,16 @@ namespace API.Controllers
             _produtoService = new ProdutoService();
         }
 
-        // GET: api/<ProdutoController>
+        /// <summary>Busca todos os produtos cadastrados</summary>
+        /// <response code="200">Retorna uma lista com os produtos cadastrados</response>
         [HttpGet]
         public ActionResult<List<Produto>> Get()
         {
             return Ok(_produtoService.ObtemProdutos().Result);
         }
 
-        // GET: api/<ProdutoController>/{id}
+        /// <summary>Busca um produto por seu id</summary>
+        /// <response code="200">Retorna o produto buscado</response>
         [HttpGet("id")]
         public Produto? Get([FromQuery] string id)
         {
@@ -30,7 +32,8 @@ namespace API.Controllers
             return produto;
         }
 
-        // POST: api/<ProdutoController>
+        /// <summary>Cria um novo produto</summary>
+        /// <response code="200">Retorna que o produto foi criado com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "codigoBarras, nome, descricao, foto")] Produto produto)
         {
@@ -49,7 +52,8 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar o produto");
         }
 
-        // DELETE: api/<ProdutoController>
+        /// <summary>Deleta um produto por seu id</summary>
+        /// <response code="200">Retorna que o produto foi deletado com sucesso</response>
         [HttpDelete]
         public ActionResult Delete([FromQuery] string id)
         {
@@ -64,7 +68,8 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<ProdutoController>
+        /// <summary>Atualiza um produto</summary>
+        /// <response code="200">Retorna que o produto foi atualizado com sucesso</response>
         [HttpPut]
         public ActionResult Edit([Bind(include: "codigodeBarras, nome, descricao, foto")] Produto produto)
         {

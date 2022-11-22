@@ -1,4 +1,4 @@
-﻿namespace BusinessLayer
+﻿namespace API
 {
     public static class Settings
     {

@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Repositorys\Repositorys.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ErrorHandler\" />
+  </ItemGroup>
+
 </Project>

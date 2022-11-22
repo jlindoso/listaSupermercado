@@ -16,14 +16,16 @@ namespace API.Controllers
             _produtoSupermercadoService = new ProdutoSupermercadoService();
         }
 
-        // GET: api/<ProdutoSupermercadoController>
+        /// <summary>Retorna o(s) produto(s) que já tenha(m) sido cadastrado(s) no(s) supermercado(s)</summary>
+        /// <response code="200">Retorna o(s) produto(s)</response>
         [HttpGet]
         public ActionResult<List<ProdutoSupermercado>> Get([FromQuery] string? parametro)
         {
             return Ok(_produtoSupermercadoService.ObtemProdutoSupermercado(parametro).Result);
         }
 
-        // GET: api/<ProdutoSupermercadoController>/{id}
+        /// <summary>Retorna um produto por seu id</summary>
+        /// <response code="200">Retorna o produto que teve o id informado</response>
         [HttpGet("id")]
         public ProdutoSupermercado? Get([FromQuery] int id)
         {
@@ -31,7 +33,8 @@ namespace API.Controllers
             return protudoSupermercado;
         }
 
-        // POST: api/<ProdutoSupermercadoController>
+        /// <summary>Cria uma nova relação de produto x supermercado</summary>
+        /// <response code="200">Retorna que a relação foi criada com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "preco, IdSupermercado, codigoBarrasProduto")] CriarProdutoSupermercadoDTO produtoSupermercado)
         {
@@ -50,7 +53,8 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar a relação");
         }
 
-        // DELETE: api/<ProdutoSupermercadoController>
+        /// <summary>Exclui uma relação de produto x supermercado, por id</summary>
+        /// <response code="200">Retorna que relação foi excluida com sucesso</response>
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
@@ -65,7 +69,8 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<ProdutoSupermercadoController>
+        /// <summary>Atualiza uma relação de produto x supermercado</summary>
+        /// <response code="200">Retorna que a relação foi atualizada com sucesso</response>
         [HttpPut]
         public ActionResult Edit([Bind(include: "id, preco, IdSupermercado, codigoBarrasProduto")] AtualizarProdutoSupermercadoDTO produtoSupermercado)
         {

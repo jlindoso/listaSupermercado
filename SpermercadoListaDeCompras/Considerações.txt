@@ -1,24 +1,17 @@
 O que falta:
 
-Configurar Autorização
-Remover referencia circular entre lista e itemLista
 Tratar erros
 Testes
 
+------------------------
+Modificações:
+
+Inserir nome na lista para melhorar a experiência do usuário
 
 ------------------------
+Tratamento de erros
 
+Deve ficar na camada de services
+Só tratar erros de acordo com o que os métodos não podem realizar
 
-Estrutura
-
-Entity
-  Contém os modelos que baseiam o resto da estrutura
-
-Repository
-  Contém como os modelos devem ser tratados no banco de dados e o contexto
-
-Business
-  Contém as regras de negócio
-
-API
-  Contém a camada de acesso
+https://www.hanselman.com/blog/good-exception-management-rules-of-thumb

@@ -1,8 +1,6 @@
 ﻿using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
-using Entities.Entity.Models;
-using BusinessLayer.DTO.ListaDTO;
 using BusinessLayer.DTO.ItemListaDTO;
 using BusinessLayer.DTO;
 using Repositorys.DTO;
@@ -18,15 +16,17 @@ namespace API.Controllers
         {
             _itemListaService = new ItemListaService();
         }
-        
-        // GET: api/<ItemListaController>
+
+        /// <summary>Busca os items dentro de uma lista</summary>
+        /// <response code="200">Retorna os items de lista que foram buscados</response>
         [HttpGet("lista/{idLista}")]
         public ActionResult<List<BuscarItemLista>> GetFromLista([FromRoute] int idLista)
         {
             return Ok(_itemListaService.ObtemItemPorLista(idLista));
         }
 
-        // GET: api/<ItemListaController>
+        /// <summary>Busca um item de lista por id</summary>
+        /// <response code="200">Retorna o item de lista buscado</response>
         [HttpGet("{id}")]
         public BuscarItemListaDTO? Get([FromRoute] int id)
         {
@@ -34,7 +34,8 @@ namespace API.Controllers
             return itemlista;
         }
 
-        // POST: api/<ItemListaController>
+        /// <summary>Cria um novo item de lista</summary>
+        /// <response code="200">Retorna que o item foi criado com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "Quantidade, Comprado, Preco, IdSupermercado, CodigoBarrasProduto, IdLista")] CriarItemListaDTO itemLista)
         {
@@ -53,7 +54,8 @@ namespace API.Controllers
             return BadRequest("Não foi possível salvar a itemLista ");
         }
 
-        // DELETE: api/<ItemListaController>
+        /// <summary>Deleta um item de lista, por id</summary>
+        /// <response code="200">Retorna que o item foi deletado com sucesso</response>
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
@@ -68,7 +70,8 @@ namespace API.Controllers
             }
         }
 
-        // PUT: api/<ItemListaController>
+        /// <summary>Atualiza um item de lista</summary>
+        /// <response code="200">Retorna que o item foi atualizado com sucesso</response>
         [HttpPut]
         public ActionResult Edit([Bind(include: "Id, Quantidade, Comprado, Preco, IdSupermercado, CodigoBarrasProduto, IdLista")] BaseItemListaDTO itemLista)
         {

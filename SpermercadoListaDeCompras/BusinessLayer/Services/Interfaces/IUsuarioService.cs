@@ -10,6 +10,6 @@ namespace BusinessLayer.Services.Interfaces
         public void DeletarUsuario(int id);
         public BuscarUsuarioDTO? ObtemUsuarioByID(int id);
         public Task<IEnumerable<Usuario>> ObtemUsuarios();
-        public dynamic Login(string email, string senha);
+        public Usuario Login(string email, string senha);
     }
 }

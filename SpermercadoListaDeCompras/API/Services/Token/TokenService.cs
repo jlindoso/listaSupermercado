@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace BusinessLayer.Services
+namespace API.Services
 {
     public class TokenService
     {
@@ -16,8 +16,8 @@ namespace BusinessLayer.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    // Se der erro, pode ser a falta de DTO aqui
                     new Claim(ClaimTypes.Name, usuario.Email.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

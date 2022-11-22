@@ -1,4 +1,6 @@
-﻿namespace Entities.Entity.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Entities.Entity.Models;
 
 public partial class ItemListum
 {
@@ -15,5 +17,6 @@ public partial class ItemListum
     public int IdLista { get; set; }
     public virtual Produto CodigoBarrasProdutoNavigation { get; set; }
     public virtual Supermercado? IdSupermercadoNavigation { get; set; }
+    [JsonIgnore]
     public virtual Listum IdListumNavigation { get; set; }
 }
