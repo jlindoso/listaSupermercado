@@ -1,5 +1,6 @@
 O que falta:
 
+Foto do produto (mostrar no swagger)
 Tratar erros
 Testes
 

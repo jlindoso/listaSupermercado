@@ -14,7 +14,7 @@
         </member>
         <member name="M:API.Controllers.ItemListaController.Create(BusinessLayer.DTO.ItemListaDTO.CriarItemListaDTO)">
             <summary>Cria um novo item de lista</summary>
-            <response code="200">Retorna que o item foi criado com sucesso</response>
+            <response code="201">Retorna o item que foi criado</response>
         </member>
         <member name="M:API.Controllers.ItemListaController.Delete(System.Int32)">
             <summary>Deleta um item de lista, por id</summary>
@@ -35,7 +35,7 @@
         </member>
         <member name="M:API.Controllers.ListaController.Create(BusinessLayer.DTO.ListaDTO.ListaDTO)">
             <summary>Cria uma nova lista</summary>
-            <response code="200">Retorna que a nova lista foi criada com sucesso</response>
+            <response code="201">Retorna a nova que lista foi criada com sucesso</response>
         </member>
         <member name="M:API.Controllers.ListaController.Delete(System.Int32)">
             <summary>Deleta uma lista por id</summary>
@@ -52,10 +52,11 @@
         <member name="M:API.Controllers.ProdutoController.Get(System.String)">
             <summary>Busca um produto por seu id</summary>
             <response code="200">Retorna o produto buscado</response>
+            <response code="204">O id procurado não retornou nenhum produto</response>
         </member>
         <member name="M:API.Controllers.ProdutoController.Create(Entities.Entity.Models.Produto)">
             <summary>Cria um novo produto</summary>
-            <response code="200">Retorna que o produto foi criado com sucesso</response>
+            <response code="201">Retorna o produto que foi criado</response>
         </member>
         <member name="M:API.Controllers.ProdutoController.Delete(System.String)">
             <summary>Deleta um produto por seu id</summary>
@@ -75,7 +76,7 @@
         </member>
         <member name="M:API.Controllers.ProdutoSupermercadoController.Create(BusinessLayer.DTO.ProdutoSupermercadoDTO.CriarProdutoSupermercadoDTO)">
             <summary>Cria uma nova relação de produto x supermercado</summary>
-            <response code="200">Retorna que a relação foi criada com sucesso</response>
+            <response code="201">Retorna a relação que foi criada com sucesso</response>
         </member>
         <member name="M:API.Controllers.ProdutoSupermercadoController.Delete(System.Int32)">
             <summary>Exclui uma relação de produto x supermercado, por id</summary>
@@ -95,7 +96,7 @@
         </member>
         <member name="M:API.Controllers.SupermercadoController.Create(BusinessLayer.DTO.SupermercadoDTO.CriarSupermercadoDTO)">
             <summary>Cria um novo supermercado</summary>
-            <response code="200">Retorna que o supermercado foi criado com sucesso</response>
+            <response code="200">Retorna o supermercado que foi criado</response>
         </member>
         <member name="M:API.Controllers.SupermercadoController.Delete(System.Int32)">
             <summary>Deleta um supermercado</summary>
@@ -115,7 +116,7 @@
         </member>
         <member name="M:API.Controllers.UsuariosController.Create(Entities.Entity.Models.Usuario)">
             <summary>Cria um novo usuário</summary>
-            <response code="200">Retorna que o usuário foi criado com sucesso</response>
+            <response code="200">Retorna o usuário que foi criado com sucesso</response>
         </member>
         <member name="M:API.Controllers.UsuariosController.Delete(System.Int32)">
             <summary>Deleta um usuário por seu id</summary>

@@ -83,6 +83,8 @@ app.UseSwaggerUI(opt =>
     opt.RoutePrefix = string.Empty;
 });
 
+app.ConfigureExceptionHandler();
+
 app.UseHttpsRedirection();
 app.UseStatusCodePages();
 

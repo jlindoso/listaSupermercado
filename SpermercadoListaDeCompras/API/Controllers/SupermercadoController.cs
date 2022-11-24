@@ -35,7 +35,7 @@ namespace API.Controllers
         }
 
         /// <summary>Cria um novo supermercado</summary>
-        /// <response code="200">Retorna que o supermercado foi criado com sucesso</response>
+        /// <response code="200">Retorna o supermercado que foi criado</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "nome, logradouro, cidade, bairro, estado, cep")] CriarSupermercadoDTO supermercado)
         {
@@ -44,7 +44,7 @@ namespace API.Controllers
                 if (ModelState.IsValid)
                 {
                     _supermercadoService.AdicionarSupermercado(supermercado);
-                    return Ok("Usuário criado com sucesso");
+                    return Created("Supermercado criado com sucesso", supermercado);
                 }
             }
             catch (Exception ex)

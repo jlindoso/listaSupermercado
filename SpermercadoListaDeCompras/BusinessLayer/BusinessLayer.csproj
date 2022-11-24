@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ErrorHandler\**" />
     <Compile Remove="Services\Base\**" />
+    <EmbeddedResource Remove="ErrorHandler\**" />
     <EmbeddedResource Remove="Services\Base\**" />
+    <None Remove="ErrorHandler\**" />
     <None Remove="Services\Base\**" />
   </ItemGroup>
 
@@ -28,10 +31,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\Repositorys\Repositorys.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ErrorHandler\" />
   </ItemGroup>
 
 </Project>

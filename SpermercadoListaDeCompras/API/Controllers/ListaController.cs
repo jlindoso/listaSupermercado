@@ -40,7 +40,7 @@ namespace API.Controllers
 
 
         /// <summary>Cria uma nova lista</summary>
-        /// <response code="200">Retorna que a nova lista foi criada com sucesso</response>
+        /// <response code="201">Retorna a nova que lista foi criada com sucesso</response>
         [HttpPost]
         [Authorize]
         public ActionResult Create([Bind(include: "DataLista, Total, EstaAtivo, idUsuario")] ListaDTO lista)
@@ -50,7 +50,7 @@ namespace API.Controllers
                 if (ModelState.IsValid)
                 {
                     _listaService.AdicionarLista(lista);
-                    return Ok("Lista criado com sucesso");
+                    return Created("Lista criado com sucesso", lista);
                 }
             }
             catch (Exception ex)

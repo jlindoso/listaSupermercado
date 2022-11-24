@@ -8,5 +8,5 @@ public partial class Produto
 
     public string? Descricao { get; set; }
 
-    public string? Foto { get; set; }
+    public Guid? FotoId { get; set; }
 }

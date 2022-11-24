@@ -24,7 +24,7 @@ namespace API.Controllers
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            return Ok( _usuarioService.ObtemUsuarios().Result);
+            return Ok(_usuarioService.ObtemUsuarios().Result);
         }
 
         /// <summary>Retorna um usuário pelo seu id</summary>
@@ -37,23 +37,12 @@ namespace API.Controllers
         }
 
         /// <summary>Cria um novo usuário</summary>
-        /// <response code="200">Retorna que o usuário foi criado com sucesso</response>
+        /// <response code="200">Retorna o usuário que foi criado com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    _usuarioService.AdicionarUsuario(usuario);
-                    return Ok("Usuário criado com sucesso");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Não foi possível criar usuário" + ex.Message);
-            }
-            return BadRequest("Não foi possível salvar o usuário");
+            _usuarioService.AdicionarUsuario(usuario);
+            return Created("Usuário criado com sucesso", usuario);
         }
 
         /// <summary>Deleta um usuário por seu id</summary>
@@ -61,15 +50,8 @@ namespace API.Controllers
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
-            try
-            {
-                _usuarioService.DeletarUsuario(id);
-                return Ok("Usuario excluido com sucesso!");
-            }
-            catch (Exception)
-            {
-                return NotFound("Usuario Não Encontrado");
-            }
+            _usuarioService.DeletarUsuario(id);
+            return Ok("Usuario excluido com sucesso!");
         }
 
         /// <summary>Atualiza um usuário</summary>
@@ -77,20 +59,8 @@ namespace API.Controllers
         [HttpPut]
         public ActionResult Edit([Bind(include: "Nome, Email, Senha")] Usuario usuario)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    _usuarioService.AtualizarUsuario(usuario);
-                    return Ok("Usuário atualizado com Sucesso");
-                }
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Não foi possível atualizar usuário");
-            }
-            return BadRequest("Não foi possível salvar o usuário");
+            _usuarioService.AtualizarUsuario(usuario);
+            return Ok("Usuário atualizado com Sucesso");
         }
 
         /// <summary>Obtêm um token de autenticação de usuário</summary>

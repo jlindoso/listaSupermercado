@@ -34,7 +34,7 @@ namespace API.Controllers
         }
 
         /// <summary>Cria uma nova relação de produto x supermercado</summary>
-        /// <response code="200">Retorna que a relação foi criada com sucesso</response>
+        /// <response code="201">Retorna a relação que foi criada com sucesso</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "preco, IdSupermercado, codigoBarrasProduto")] CriarProdutoSupermercadoDTO produtoSupermercado)
         {
@@ -43,7 +43,7 @@ namespace API.Controllers
                 if (ModelState.IsValid)
                 {
                     _produtoSupermercadoService.AdicionarProdutoSupermercado(produtoSupermercado);
-                    return Ok("Relação criada com sucesso");
+                    return Created("Relação criada com sucesso", produtoSupermercado);
                 }
             }
             catch (Exception ex)

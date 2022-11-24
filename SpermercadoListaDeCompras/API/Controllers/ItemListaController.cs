@@ -35,7 +35,7 @@ namespace API.Controllers
         }
 
         /// <summary>Cria um novo item de lista</summary>
-        /// <response code="200">Retorna que o item foi criado com sucesso</response>
+        /// <response code="201">Retorna o item que foi criado</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "Quantidade, Comprado, Preco, IdSupermercado, CodigoBarrasProduto, IdLista")] CriarItemListaDTO itemLista)
         {
@@ -44,7 +44,7 @@ namespace API.Controllers
                 if (ModelState.IsValid)
                 {
                     _itemListaService.AdicionarItemLista(itemLista);
-                    return Ok("ItemLista criado com sucesso");
+                    return Created("ItemLista criado com sucesso", itemLista);
                 }
             }
             catch (Exception ex)

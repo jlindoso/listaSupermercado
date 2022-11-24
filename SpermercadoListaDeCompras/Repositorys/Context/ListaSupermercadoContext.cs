@@ -1,4 +1,5 @@
 ﻿using Entities.Entity.Models;
+using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositorys.Context;
@@ -25,9 +26,13 @@ public partial class ListaSupermercadoContext : DbContext
     public virtual DbSet<Supermercado> Supermercados { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<FotoProduto> FotosProdutos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=ListaSupermercado;Integrated Security=True; Encrypt=False");
+        => optionsBuilder
+        .UseSqlServer("Data Source=localhost;Initial Catalog=ListaSupermercado;Integrated Security=True; Encrypt=False")
+        .LogTo(Console.WriteLine)
+        .EnableDetailedErrors();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -87,9 +92,7 @@ public partial class ListaSupermercadoContext : DbContext
             entity.Property(e => e.Descricao)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Foto)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.FotoId).HasColumnType("uniqueidentifier");
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -162,6 +165,12 @@ public partial class ListaSupermercadoContext : DbContext
             entity.Property(e => e.Senha)
                 .HasMaxLength(255)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<FotoProduto>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Imagem).HasColumnType("varbinary");
         });
 
         OnModelCreatingPartial(modelBuilder);

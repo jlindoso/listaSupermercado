@@ -115,10 +115,8 @@ namespace Repositorys.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Foto")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                    b.Property<Guid?>("FotoId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Nome")
                         .HasMaxLength(50)
@@ -238,6 +236,21 @@ namespace Repositorys.Migrations
                         .HasFilter("[Email] IS NOT NULL");
 
                     b.ToTable("Usuario", (string)null);
+                });
+
+            modelBuilder.Entity("Entities.Models.FotoProduto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("varbinary");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FotosProdutos");
                 });
 
             modelBuilder.Entity("Entities.Entity.Models.ItemListum", b =>

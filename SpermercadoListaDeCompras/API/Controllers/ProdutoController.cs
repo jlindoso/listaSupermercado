@@ -25,6 +25,7 @@ namespace API.Controllers
 
         /// <summary>Busca um produto por seu id</summary>
         /// <response code="200">Retorna o produto buscado</response>
+        /// <response code="204">O id procurado não retornou nenhum produto</response>
         [HttpGet("id")]
         public Produto? Get([FromQuery] string id)
         {
@@ -33,7 +34,7 @@ namespace API.Controllers
         }
 
         /// <summary>Cria um novo produto</summary>
-        /// <response code="200">Retorna que o produto foi criado com sucesso</response>
+        /// <response code="201">Retorna o produto que foi criado</response>
         [HttpPost]
         public ActionResult Create([Bind(include: "codigoBarras, nome, descricao, foto")] Produto produto)
         {
@@ -42,7 +43,7 @@ namespace API.Controllers
                 if (ModelState.IsValid)
                 {
                     _produtoService.AdicionarProduto(produto);
-                    return Ok("Produto criado com sucesso");
+                    return Created("Produto criado com sucesso", produto);
                 }
             }
             catch (Exception ex)
@@ -60,7 +61,7 @@ namespace API.Controllers
             try
             {
                 _produtoService.DeletarProduto(id);
-                return Ok("Produto excluido com sucesso!");
+                return NoContent();
             }
             catch (Exception)
             {
